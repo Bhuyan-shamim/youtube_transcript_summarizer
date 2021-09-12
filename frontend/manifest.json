@@ -1,0 +1,35 @@
+{
+    "name": "YouTube Transcript Summarizer",
+    "version": "0.1",
+    "description": "An extension to generate summary of transcript of YouTube videos",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/watch?v=*"
+            ],
+            "css": [
+                "content.css"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
